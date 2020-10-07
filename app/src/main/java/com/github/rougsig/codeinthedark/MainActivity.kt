@@ -2,10 +2,7 @@ package com.github.rougsig.codeinthedark
 
 import android.content.Context
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.github.rougsig.codeinthedark.RoundCornersOutlineProvider.CornerType
-import splitties.dimensions.dip
 import splitties.views.dsl.core.Ui
 import splitties.views.dsl.core.imageView
 import splitties.views.dsl.core.textView
@@ -18,26 +15,39 @@ class MainActivity : AppCompatActivity() {
 }
 
 private class MainActivityUi(override val ctx: Context) : Ui {
-  private val title = textView {
-    style(TextStyle.Headline1)
-    text = "Hello World"
+  private val hero = imageView {
+    setImageResource(R.drawable.hero_img)
   }
 
-  private val image = imageView {
-    setImageResource(R.drawable.ic_launcher_background)
-    scaleType = ImageView.ScaleType.FIT_XY
-    outlineProvider = RoundCornersOutlineProvider(dip(16), CornerType.AllSides)
-    clipToOutline = true
+  private val info = contourLayout {
+
   }
+
+  private val title = textView {
+    text = "Ford v Ferrari"
+    setSingleLine()
+  }
+  private val year = textView {
+    text = "2019"
+  }
+  private val pg = textView {
+    text = "PG-13"
+  }
+  private val timing = textView {
+    text = "2h 32min"
+  }
+
 
   override val root = contourLayout {
-    image.layoutBy(
-      x = parentWidth(16),
-      y = topTo { parent.top() + 16.dip }
+    hero.layoutBy(
+      x = parentWidth(),
+      y = topTo { parent.top() }
     )
     title.layoutBy(
-      x = centerHorizontallyTo { parent.centerX() },
-      y = centerVerticallyTo { parent.centerY() + image.height() / 2 }
+      x = leftTo { parent.left() + 32.xdip },
+      y = topTo { hero.bottom() + 102.ydip }
     )
-  }
+
+    contourHeightOf { 2000.ydip }
+  }.wrapInNestedScrollView { isFillViewport = true }
 }
