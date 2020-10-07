@@ -7,9 +7,12 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.annotation.IdRes
 import androidx.appcompat.app.AppCompatActivity
+import com.squareup.contour.ContourLayout
 import splitties.dimensions.dip
+import splitties.dimensions.dp
 import splitties.views.dsl.core.*
 import splitties.views.gravityCenter
+import splitties.views.textColorResource
 
 class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,49 +26,64 @@ private class MainActivityUi(override val ctx: Context) : Ui {
     setImageResource(R.drawable.hero_img)
   }
 
-  private val info = contourLayout {
-  }
-
   private val title = textView {
     text = "Ford v Ferrari"
+    textSize = dp(32)
     setSingleLine()
   }
   private val year = textView {
     text = "2019"
+    textSize = dp(16)
   }
   private val pg = textView {
     text = "PG-13"
+    textSize = dp(16)
   }
   private val timing = textView {
     text = "2h 32min"
+    textSize = dp(16)
   }
   private val tag1 = textView {
     text = "Action"
+    textSize = dp(16)
   }
   private val tag2 = textView {
     text = "Biography"
+    textSize = dp(16)
   }
   private val tag3 = textView {
     text = "Drama"
+    textSize = dp(16)
   }
   private val descTitle = textView {
     text = "Plot Summary"
+    textSize = dp(24)
   }
   private val description = textView {
+    textSize = dp(16)
     text = "American car designer Carroll Shelby and driver Kn Miles battle corporate " +
       "interference and the laws of physics to build a revolutionary race car for Ford in order."
   }
   private val crewTitle = textView {
     text = "Cast & Crew"
+    textSize = dp(24)
   }
-  private val crewItem1 = crewItem {
-
+  private val crew = horizontalLayout {
+    add(crewItem(), lParams(dip(80), wrapContent))
+    add(crewItem(), lParams(dip(80), wrapContent))
+    add(crewItem(), lParams(dip(80), wrapContent))
+    add(crewItem(), lParams(dip(80), wrapContent))
   }
+  private val meta = meta()
 
   override val root = contourLayout {
     hero.layoutBy(
       x = parentWidth(),
       y = topTo { parent.top() }
+    )
+    meta.layoutBy(
+      x = leftTo { parent.left() + 32.dip }.rightTo { parent.right() },
+      y = topTo { hero.bottom() - 55.ydip }.heightOf { 110.ydip }
     )
     title.layoutBy(
       x = leftTo { parent.left() + 32.xdip },
@@ -111,8 +129,8 @@ private class MainActivityUi(override val ctx: Context) : Ui {
       x = parentWidth(32),
       y = topTo { description.bottom() + 48.ydip }
     )
-    crewItem1.layoutBy(
-      x = leftTo { parent.left() + 32.dip },
+    crew.layoutBy(
+      x = parentWidth(32),
       y = topTo { crewTitle.bottom() + 16.ydip }
     )
 
@@ -151,4 +169,89 @@ private inline fun Ui.crewItem(
   initView: CrewItem.() -> Unit = {}
 ): CrewItem {
   return view({ CrewItem(it) }, id, initView = initView)
+}
+
+private class Meta(ctx: Context) : ContourLayout(ctx) {
+  init {
+    elevation = dp(16)
+  }
+
+  private val starFilled = imageView {
+    setImageResource(R.drawable.ic_star_filled)
+  }
+  private val score = textView {
+    text = "8.2/10"
+    textSize = dp(16)
+  }
+  private val total = textView {
+    text = "150,212"
+    textSize = dp(12)
+  }
+
+  private val star = imageView {
+    setImageResource(R.drawable.ic_star)
+  }
+  private val rateThis = textView {
+    text = "Rate This"
+    textSize = dp(16)
+  }
+
+  private val meta = textView {
+    setBackgroundResource(R.color.green)
+    textColorResource = R.color.white
+    textSize = dp(14)
+    text = "86"
+  }
+  private val metascore = textView {
+    text = "Metascore"
+    textSize = dp(16)
+  }
+  private val metaScoreDesc = textView {
+    text = "62 critic reviews"
+    textSize = dp(12)
+  }
+
+  init {
+    starFilled.layoutBy(
+      x = leftTo { parent.left() + 66.dip },
+      y = topTo { parent.top() + 16.dip }
+    )
+    score.layoutBy(
+      x = centerHorizontallyTo { starFilled.centerX() },
+      y = topTo { starFilled.top() + 4.dip }
+    )
+    total.layoutBy(
+      x = centerHorizontallyTo { starFilled.centerX() },
+      y = topTo { starFilled.top() + 4.dip }
+    )
+
+    star.layoutBy(
+      x = leftTo { parent.left() + 205.dip },
+      y = topTo { parent.top() + 16.dip }
+    )
+    rateThis.layoutBy(
+      x = centerHorizontallyTo { star.centerX() - 24.dip },
+      y = topTo { starFilled.top() + 4.dip }
+    )
+
+    meta.layoutBy(
+      x = leftTo { parent.left() + 344.dip },
+      y = topTo { parent.top() + 16.dip }
+    )
+    metascore.layoutBy(
+      x = centerHorizontallyTo { meta.centerX() - 24.dip },
+      y = topTo { starFilled.top() + 4.dip }
+    )
+    metaScoreDesc.layoutBy(
+      x = centerHorizontallyTo { meta.centerX() - 24.dip },
+      y = topTo { starFilled.top() + 4.dip }
+    )
+  }
+}
+
+private inline fun Ui.meta(
+  @IdRes id: Int = View.NO_ID,
+  initView: Meta.() -> Unit = {}
+): Meta {
+  return view({ Meta(it) }, id, initView = initView)
 }
