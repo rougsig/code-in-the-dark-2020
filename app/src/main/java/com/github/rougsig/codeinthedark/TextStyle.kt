@@ -30,17 +30,17 @@ enum class TextStyle {
     val headline2 = textViewStyle {
       textSizeRes(R.dimen.size_40_sp)
       lineHeightRes(R.dimen.size_58_sp)
-      fontFamilyRes(R.font.montserrat_regular)
+      fontFamilyRes(R.font.proxima_nova_light)
     }
     val headline3 = textViewStyle {
       textSizeRes(R.dimen.size_24_sp)
       lineHeightRes(R.dimen.size_32_sp)
-      fontFamilyRes(R.font.montserrat_regular)
+      fontFamilyRes(R.font.proxima_nova_light)
     }
     val headline4 = textViewStyle {
       textSizeRes(R.dimen.size_24_sp)
       lineHeightRes(R.dimen.size_32_sp)
-      fontFamilyRes(R.font.montserrat_semibold)
+      fontFamilyRes(R.font.proxima_nova_bold)
     }
     val headline5 = textViewStyle {
       textSizeRes(R.dimen.size_24_sp)
@@ -51,7 +51,7 @@ enum class TextStyle {
     val subtitle1 = textViewStyle {
       textSizeRes(R.dimen.size_18_sp)
       lineHeightRes(R.dimen.size_28_sp)
-      fontFamilyRes(R.font.montserrat_semibold)
+      fontFamilyRes(R.font.proxima_nova_bold)
     }
     val subtitle2 = textViewStyle {
       textSizeRes(R.dimen.size_18_sp)
@@ -62,38 +62,38 @@ enum class TextStyle {
     val body1 = textViewStyle {
       textSizeRes(R.dimen.size_16_sp)
       lineHeightRes(R.dimen.size_24_sp)
-      fontFamilyRes(R.font.montserrat_regular)
+      fontFamilyRes(R.font.proxima_nova_light)
     }
     val body2 = textViewStyle {
       textSizeRes(R.dimen.size_16_sp)
       lineHeightRes(R.dimen.size_24_sp)
-      fontFamilyRes(R.font.montserrat_medium)
+      fontFamilyRes(R.font.proxima_nova_regular)
     }
     val body3 = textViewStyle {
       textSizeRes(R.dimen.size_16_sp)
       lineHeightRes(R.dimen.size_24_sp)
-      fontFamilyRes(R.font.montserrat_semibold)
+      fontFamilyRes(R.font.proxima_nova_bold)
     }
     val body4 = textViewStyle {
       textSizeRes(R.dimen.size_14_sp)
       lineHeightRes(R.dimen.size_18_sp)
-      fontFamilyRes(R.font.montserrat_regular)
+      fontFamilyRes(R.font.proxima_nova_light)
     }
     val body5 = textViewStyle {
       textSizeRes(R.dimen.size_14_sp)
       lineHeightRes(R.dimen.size_18_sp)
-      fontFamilyRes(R.font.montserrat_semibold)
+      fontFamilyRes(R.font.proxima_nova_bold)
     }
 
     val caption1 = textViewStyle {
       textSizeRes(R.dimen.size_12_sp)
       lineHeightRes(R.dimen.size_16_sp)
-      fontFamilyRes(R.font.montserrat_regular)
+      fontFamilyRes(R.font.proxima_nova_light)
     }
     val caption2 = textViewStyle {
       textSizeRes(R.dimen.size_12_sp)
       lineHeightRes(R.dimen.size_16_sp)
-      fontFamilyRes(R.font.montserrat_medium)
+      fontFamilyRes(R.font.proxima_nova_regular)
     }
     val caption3 = textViewStyle {
       textSizeRes(R.dimen.size_12_sp)
@@ -103,7 +103,7 @@ enum class TextStyle {
     val caption4 = textViewStyle {
       textSizeRes(R.dimen.size_10_sp)
       lineHeightRes(R.dimen.size_16_sp)
-      fontFamilyRes(R.font.montserrat_regular)
+      fontFamilyRes(R.font.proxima_nova_light)
     }
   }
 }

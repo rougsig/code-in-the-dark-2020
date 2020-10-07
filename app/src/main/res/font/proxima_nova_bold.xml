@@ -3,13 +3,12 @@
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
   tools:ignore="UnusedAttribute">
-  <!-- How use and set fonts see wiki page "Fonts In Xml". -->
 
   <font
-    android:font="@font/montserrat_medium_font"
+    android:font="@font/proxima_nova_bold_font"
     android:fontStyle="normal"
     android:fontWeight="600"
-    app:font="@font/montserrat_medium_font"
+    app:font="@font/proxima_nova_bold_font"
     app:fontStyle="normal"
     app:fontWeight="600" />
 

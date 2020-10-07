@@ -6,10 +6,10 @@
   <!-- How use and set fonts see wiki page "Fonts In Xml". -->
 
   <font
-    android:font="@font/montserrat_regular_font"
+    android:font="@font/proxima_nova_light_font"
     android:fontStyle="normal"
     android:fontWeight="500"
-    app:font="@font/montserrat_regular_font"
+    app:font="@font/proxima_nova_light_font"
     app:fontStyle="normal"
     app:fontWeight="500" />
 
