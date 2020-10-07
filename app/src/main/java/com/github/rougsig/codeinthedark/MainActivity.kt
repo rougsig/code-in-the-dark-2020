@@ -28,45 +28,35 @@ private class MainActivityUi(override val ctx: Context) : Ui {
 
   private val title = textView {
     text = "Ford v Ferrari"
-    textSize = dp(32)
     setSingleLine()
   }
   private val year = textView {
     text = "2019"
-    textSize = dp(16)
   }
   private val pg = textView {
     text = "PG-13"
-    textSize = dp(16)
   }
   private val timing = textView {
     text = "2h 32min"
-    textSize = dp(16)
   }
   private val tag1 = textView {
     text = "Action"
-    textSize = dp(16)
   }
   private val tag2 = textView {
     text = "Biography"
-    textSize = dp(16)
   }
   private val tag3 = textView {
     text = "Drama"
-    textSize = dp(16)
   }
   private val descTitle = textView {
     text = "Plot Summary"
-    textSize = dp(24)
   }
   private val description = textView {
-    textSize = dp(16)
     text = "American car designer Carroll Shelby and driver Kn Miles battle corporate " +
       "interference and the laws of physics to build a revolutionary race car for Ford in order."
   }
   private val crewTitle = textView {
     text = "Cast & Crew"
-    textSize = dp(24)
   }
   private val crew = horizontalLayout {
     add(crewItem(), lParams(dip(80), wrapContent))
@@ -181,11 +171,9 @@ private class Meta(ctx: Context) : ContourLayout(ctx) {
   }
   private val score = textView {
     text = "8.2/10"
-    textSize = dp(16)
   }
   private val total = textView {
     text = "150,212"
-    textSize = dp(12)
   }
 
   private val star = imageView {
@@ -193,22 +181,18 @@ private class Meta(ctx: Context) : ContourLayout(ctx) {
   }
   private val rateThis = textView {
     text = "Rate This"
-    textSize = dp(16)
   }
 
   private val meta = textView {
     setBackgroundResource(R.color.green)
     textColorResource = R.color.white
-    textSize = dp(14)
     text = "86"
   }
   private val metascore = textView {
     text = "Metascore"
-    textSize = dp(16)
   }
   private val metaScoreDesc = textView {
     text = "62 critic reviews"
-    textSize = dp(12)
   }
 
   init {
